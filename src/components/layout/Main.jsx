@@ -28,15 +28,20 @@ export default function Main() {
         </div>
 
         {/* LANGUAGE CARDS */}
-        {languages.map((language, index) => (
-          <div
-            key={language.id}
-            className={"card p-3 m-3" + (isSelected[index] ? "" : " d-none")}
-          >
-            <div className="card-title fw-bold">{language.title}</div>
-            <div className="card-description">{language.description}</div>
-          </div>
-        ))}
+
+        {isSelected.includes(true) ? (
+          languages.map((language, index) => (
+            <div
+              key={language.id}
+              className={"card p-3 m-3" + (isSelected[index] ? "" : " d-none")}
+            >
+              <div className="card-title fw-bold">{language.title}</div>
+              <div className="card-description">{language.description}</div>
+            </div>
+          ))
+        ) : (
+          <h2 className="p-3">Nessun linguaggio selezionato</h2>
+        )}
       </div>
     </main>
   );

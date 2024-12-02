@@ -7,7 +7,9 @@ export default function Button({
   return (
     <button
       onClick={() => buttonClickHandler(index)}
-      className={"btn me-2 " + (isSelected ? " btn-warning" : " btn-primary")}
+      className={
+        "btn me-2 my-2 " + (isSelected ? " btn-warning" : " btn-primary")
+      }
     >
       {text}
     </button>

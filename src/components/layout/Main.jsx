@@ -3,16 +3,12 @@ import Button from "../ui/Button";
 import languages from "../../db/languages";
 
 export default function Main() {
-  const [selected, setIsSelected] = useState(
-    languages.map((language) => false)
-  );
+  const [isSelected, setIsSelected] = useState(languages.map(() => false));
 
   const buttonClickHandler = (index) => {
-    console.log("bottone " + index + " cliccato");
-    const newSelection = [...selected];
-    newSelection[index] = !selected[index];
+    const newSelection = isSelected.map(() => false);
+    newSelection[index] = !isSelected[index];
     setIsSelected(newSelection);
-    console.log(newSelection);
   };
 
   return (
@@ -22,10 +18,9 @@ export default function Main() {
         <div className="buttons-container p-3">
           {languages.map((language, index) => (
             <Button
-              isSelected={selected[index]}
+              isSelected={isSelected[index]}
               buttonClickHandler={buttonClickHandler}
               key={language.id}
-              id={language.id}
               index={index}
               text={language.title}
             />
@@ -36,7 +31,7 @@ export default function Main() {
         {languages.map((language, index) => (
           <div
             key={language.id}
-            className={"card p-3 m-3" + (selected[index] ? "" : " d-none")}
+            className={"card p-3 m-3" + (isSelected[index] ? "" : " d-none")}
           >
             <div className="card-title fw-bold">{language.title}</div>
             <div className="card-description">{language.description}</div>

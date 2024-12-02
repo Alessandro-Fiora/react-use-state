@@ -1,6 +1,5 @@
 export default function Button({
   index,
-  id,
   text,
   buttonClickHandler,
   isSelected,

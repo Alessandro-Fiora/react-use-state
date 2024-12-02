@@ -38,10 +38,10 @@ export default function Main() {
               isSelected={isSelected[index]}
               title={language.title}
               description={language.description}
-            ></Card>
+            />
           ))
         ) : (
-          <h2 className="p-3">Nessun linguaggio selezionato</h2>
+          <Card isSelected={true} title="Nessun linguaggio selezionato" />
         )}
       </div>
     </main>

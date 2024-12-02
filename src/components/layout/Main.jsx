@@ -1,6 +1,7 @@
 import { useState } from "react";
-import Button from "../ui/Button";
 import languages from "../../db/languages";
+import Button from "../ui/Button";
+import Card from "../ui/Card";
 
 export default function Main() {
   const [isSelected, setIsSelected] = useState(languages.map(() => false));
@@ -31,13 +32,12 @@ export default function Main() {
 
         {isSelected.includes(true) ? (
           languages.map((language, index) => (
-            <div
+            <Card
               key={language.id}
-              className={"card p-3 m-3" + (isSelected[index] ? "" : " d-none")}
-            >
-              <div className="card-title fw-bold">{language.title}</div>
-              <div className="card-description">{language.description}</div>
-            </div>
+              isSelected={isSelected[index]}
+              title={language.title}
+              description={language.description}
+            ></Card>
           ))
         ) : (
           <h2 className="p-3">Nessun linguaggio selezionato</h2>

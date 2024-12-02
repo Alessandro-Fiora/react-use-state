@@ -1,8 +1,14 @@
-export default function Button({ id, text, buttonClickHandler }) {
+export default function Button({
+  index,
+  id,
+  text,
+  buttonClickHandler,
+  isSelected,
+}) {
   return (
     <button
-      onClick={() => buttonClickHandler(id)}
-      className="btn btn-primary me-2"
+      onClick={() => buttonClickHandler(index)}
+      className={"btn me-2 " + (isSelected ? " btn-warning" : " btn-primary")}
     >
       {text}
     </button>

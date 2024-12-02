@@ -1,3 +1,7 @@
-export default function Main() {
-  return <h1>Header</h1>;
+export default function Header() {
+  return (
+    <header>
+      <h1 className="p-3">Learn Web Development</h1>
+    </header>
+  );
 }

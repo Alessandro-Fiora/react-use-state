@@ -22,11 +22,11 @@ export default function Main() {
           {languages.map((language, index) => (
             <Button
               isSelected={isSelected[index]}
-              buttonClickHandler={buttonClickHandler}
+              buttonClickHandler={() => buttonClickHandler(index)}
               key={language.id}
-              index={index}
-              text={language.title}
-            />
+            >
+              {language.title}
+            </Button>
           ))}
         </div>
 

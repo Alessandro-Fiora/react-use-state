@@ -1,17 +1,12 @@
-export default function Button({
-  index,
-  text,
-  buttonClickHandler,
-  isSelected,
-}) {
+export default function Button({ children, buttonClickHandler, isSelected }) {
   return (
     <button
-      onClick={() => buttonClickHandler(index)}
+      onClick={buttonClickHandler}
       className={
         "btn me-2 my-2 " + (isSelected ? " btn-warning" : " btn-primary")
       }
     >
-      {text}
+      {children}
     </button>
   );
 }
